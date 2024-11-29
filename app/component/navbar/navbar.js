@@ -23,7 +23,6 @@ import Image from "next/image";
 import "./style.css";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
@@ -42,10 +41,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <nav
@@ -115,7 +110,7 @@ export default function Navbar() {
             <Sheet>
               <SheetTrigger>
                 <svg
-                  className="h-6 w-6 text-[white]"
+                  className="h-6 w-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -138,8 +133,8 @@ export default function Navbar() {
                 <SheetHeader>
                   <SheetTitle></SheetTitle>
                   <SheetDescription>
-                    <ScrollArea className="h-[600px]">
-                      <ul className="mt-10 p-3">
+                    <ScrollArea className="h-[100vh] pb-10">
+                      <ul className="mt-5 p-3">
                         <li>
                           <Accordion type="single" collapsible>
                             <AccordionItem value="item-1">

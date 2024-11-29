@@ -1,0 +1,121 @@
+.section2 {
+  width: 90%;
+  margin: auto;
+  padding: 20px 0;
+}
+.section2-image-1 {
+  width: 280px;
+  height: 280px;
+  box-shadow: 0px 0px 10px gray;
+}
+.section2-image-2 {
+  margin-top: 240px;
+  margin-right: 280px;
+  z-index: -1;
+}
+.section2-image-3 {
+  margin-top: 185px;
+  margin-left: 320px;
+  z-index: -1;
+}
+.section2-image-4 {
+  margin-right: 350px;
+  margin-top: -170px;
+  z-index: -1;
+}
+.section2-image-5 {
+  margin-left: 330px;
+  margin-top: -90px;
+  z-index: -1;
+}
+.section2 h2 {
+  margin: 20px 0;
+  padding: 50px 0;
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+}
+.image-layout-right-child {
+  /* background-color: blueviolet; */
+  width: 75%;
+  margin: auto;
+}
+.image-layout-right {
+  /* background-color: aqua; */
+}
+.image-layout-right h3 {
+  font-weight: bold;
+  font-size: 34px;
+}
+.image-layout-right p {
+  font-size: 16px;
+  padding: 10px 0;
+}
+.image-layout-right button {
+  background-color: black;
+  color: white;
+  padding: 10px 14px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 20px;
+}
+.section2-child {
+  padding: 10px;
+  margin: 30px 0;
+}
+@media only screen and (max-width: 998px) {
+  .section2-child {
+    flex-direction: column;
+  }
+  .image-layout-right-child {
+    width: 100%;
+  }
+  .image-layout-right {
+    margin-top: 100px;
+  }
+
+  .image-layout-right h3 {
+    font-size: 24px;
+  }
+
+  .image-layout-right p {
+    font-size: 14px;
+  }
+  .image-layout-right button {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section2 h2 {
+    padding: 30px 0;
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  .section2 {
+    flex-direction: column;
+  }
+  .section2-image-1 {
+    width: 160px;
+    height: 160px;
+  }
+  .section2-image-2 {
+    margin-top: 140px;
+    margin-right: 170px;
+    width: 90px;
+  }
+  .section2-image-3 {
+    margin-top: 125px;
+    margin-left: 220px;
+    width: 90px;
+  }
+  .section2-image-4 {
+    width: 90px;
+    margin-right: 200px;
+    margin-top: -100px;
+  }
+  .section2-image-5 {
+    margin-left: 200px;
+    margin-top: -60px;
+    width: 70px;
+  }
+}

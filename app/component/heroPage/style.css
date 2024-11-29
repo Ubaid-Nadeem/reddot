@@ -20,19 +20,24 @@
   padding: 10px;
   width: 120px;
   margin-top: 30px;
-  
 }
-.child-container{
-  width: 90%;
+.child-container {
+  width: 88%;
   margin: auto;
 }
 @media only screen and (max-width: 768px) {
   .hero-page {
-    height: 60vh;
+    height: 70vh;
     background-position: center;
   }
-.hero-page h1 {
-  font-size: 24px;
+  .hero-page h1 {
+    font-size: 24px;
+  }
+.hero-page button {
+  padding: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+
 
 }
 }
