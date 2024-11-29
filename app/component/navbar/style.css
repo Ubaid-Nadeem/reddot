@@ -1,0 +1,67 @@
+nav li {
+    cursor: pointer;
+}
+
+.nested-nav {
+  position: absolute;
+  background-color: white;
+  color: black;
+  width: 200px;
+  top: 60px;
+  left: 6.1%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000;
+  transition: all 0.3s linear;
+  /* padding: 15px; */
+}
+.nested-nav li {
+  color: black;
+  padding: 8px 10px;
+  margin: 5px;
+  /* transition: all 0.5 linear; */
+  font-weight: 500;
+}
+.nested-nav li:hover {
+  padding-left: 15px;
+}
+
+.left-nav > ul > li:first-child {
+}
+.left-nav > ul > li:first-child:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+.left-nav > ul > li:first-child:hover .nested-nav {
+  visibility: inherit;
+  opacity: 1;
+  top: 75px;
+}
+
+.left-nav > span:first-child {
+  padding: 15px 5px;
+  width: 100px;
+  text-align: center;
+}
+.left-nav > ul > li {
+  padding: 15px;
+  text-align: center;
+  max-height: 55px;
+}
+.left-nav > ul > li > ul li {
+  text-align: left;
+}
+.right-nav span{
+  cursor: pointer;
+  font-weight: bold;
+}
+.mobile-nav li{
+  padding: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+.logo{
+    width: 70px;
+}
+}

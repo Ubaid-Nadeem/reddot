@@ -1,0 +1,38 @@
+.hero-page {
+  background-image: url("https://radstore.pk/cdn/shop/files/76375-custom_f4a9ab96-51e7-4797-9b64-985aec925b7c_1512x.jpg?v=1613737420");
+  background-position: cover;
+  background-size: cover;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  /* width: 90%; */
+  margin: auto;
+}
+.hero-page h1 {
+  width: 100%;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: normal;
+}
+.hero-page button {
+  border: 2px solid white;
+  padding: 10px;
+  width: 120px;
+  margin-top: 30px;
+  
+}
+.child-container{
+  width: 90%;
+  margin: auto;
+}
+@media only screen and (max-width: 768px) {
+  .hero-page {
+    height: 60vh;
+    background-position: center;
+  }
+.hero-page h1 {
+  font-size: 24px;
+
+}
+}
