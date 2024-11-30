@@ -1,8 +1,8 @@
-
 import Navbar from "./component/navbar/navbar";
 import HeroComponet from "./component/heroPage/page";
 import Section from "./component/section2/page";
 import { Outfit } from "@next/font/google";
+import TshirtCollection from "./component/tshirt-collection/page";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -15,6 +15,7 @@ export default function Home() {
       <Navbar />
       <HeroComponet />
       <Section />
+      <TshirtCollection />
     </main>
   );
 }

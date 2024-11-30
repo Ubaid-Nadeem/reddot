@@ -1,0 +1,70 @@
+.tshirt-container {
+  /* background-color: aquamarine; */
+  margin-top: 50px;
+}
+.tshirt-container h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 30px 0;
+}
+.card-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 10px;
+  padding: 20px 0;
+}
+.card-container  >div{
+    flex : 1 0 22%
+}
+
+
+.tshirt-card {
+  width: 280px;
+}
+.tshirt-card > div {
+  max-width: 100%;
+}
+.card-title {
+  margin-top: 20px;
+}
+
+.card-prices span {
+  font-size: 14px;
+}
+.card-title {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 998px) {
+  .card-container {
+    width: 100%;
+    padding: 20px;
+  }
+  .tshirt-container h1 {
+    padding: 15px 0;
+    font-size: 22px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+    text-align: center;
+  }
+  .tshirt-container {
+    margin-top: 0px;
+  }
+  .card-prices {
+    flex-direction: column;
+  }
+  .card-prices span {
+    font-size: 12px;
+  }
+  .tshirt-card {
+    width: 220px;
+  }
+  .save-price{
+    margin-top: 10px;
+  }
+}
