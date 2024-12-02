@@ -3,6 +3,9 @@ import HeroComponet from "./component/heroPage/page";
 import Section from "./component/section2/page";
 import { Outfit } from "@next/font/google";
 import TshirtCollection from "./component/tshirt-collection/page";
+import TrouserCollection from "./component/trousers-collection/page";
+import FullSleeveTshirt from "./component/full-sleeve-t-shirts/page";
+import HomeDisplay1 from "./component/home-display1/page";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -16,6 +19,10 @@ export default function Home() {
       <HeroComponet />
       <Section />
       <TshirtCollection />
+      <TrouserCollection />
+      <FullSleeveTshirt />
+      <HomeDisplay1/>
+     
     </main>
   );
 }

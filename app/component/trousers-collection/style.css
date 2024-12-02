@@ -1,8 +1,7 @@
-.tshirt-container {
-  /* background-color: aquamarine; */
+.trouser-container {
   margin-top: 50px;
 }
-.tshirt-container h1 {
+.trouser-container h1 {
   text-align: center;
   font-size: 32px;
   font-weight: bold;
@@ -23,7 +22,6 @@
 
 .tshirt-card {
   width: 280px;
-  margin-bottom: 50px;
 }
 .tshirt-card > div {
   max-width: 100%;
@@ -48,6 +46,7 @@
   text-align: center;
 }
 @media only screen and (max-width: 998px) {
+  
   .card-container {
     width: 100%;
     padding: 20px;
@@ -57,7 +56,7 @@
   .card-container > div {
     flex: 1 0 20%;
   }
-  .tshirt-container h1 {
+  .trouser-container h1 {
     padding: 15px 0;
     font-size: 22px;
   }
@@ -66,7 +65,7 @@
     font-size: 16px;
     text-align: center;
   }
-  .tshirt-container {
+  .trouser-container {
     margin-top: 0px;
   }
   .card-prices {
@@ -84,16 +83,14 @@
   .card-container > div {
     flex-wrap: nowrap;
   }
+  
+  .trouser-container{
+    margin-top: 40px;
+  }
 }
 
 @media only screen and (max-width: 756px) {
-  .tshirt-card {
-    margin-bottom: 0px;
-  }
-  .sizes-tag-container{
-    justify-content: center;
-  }
-  .tshirt-section-footer button {
+  .tshirt-section-footer button{
     display: none;
   }
   .card-container {
@@ -102,5 +99,9 @@
 
   .card-container > div {
     flex: 1 0 10%;
+  }
+  
+  .trouser-container{
+    margin-top: 0px;
   }
 }
