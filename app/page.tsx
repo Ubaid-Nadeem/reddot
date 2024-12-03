@@ -6,6 +6,7 @@ import TshirtCollection from "./component/tshirt-collection/page";
 import TrouserCollection from "./component/trousers-collection/page";
 import FullSleeveTshirt from "./component/full-sleeve-t-shirts/page";
 import HomeDisplay1 from "./component/home-display1/page";
+import HomeFooter2 from "./component/home-footer-1/page";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function Home() {
       <TrouserCollection />
       <FullSleeveTshirt />
       <HomeDisplay1/>
+      <HomeFooter2/>
      
     </main>
   );

@@ -1,3 +1,4 @@
+import ArrowButton from "../animata/button/button";
 import "./style.css";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
@@ -7,8 +8,7 @@ export default function FullSleeveTshirt() {
       <h1>Full Sleeve T-Shirts</h1>
       <ScrollArea className="w-full ">
         <div className="card-container">
-
-        <div className="tshirt-card ">
+          <div className="tshirt-card ">
             <div>
               <a href="#" className="sale-image">
                 <img
@@ -16,12 +16,11 @@ export default function FullSleeveTshirt() {
                   src="https://radstore.pk/cdn/shop/files/DSC00506-alt_360x.jpg?v=1731923858"
                   alt="product image"
                 />
-              
               </a>
 
               <div>
                 <h5 className=" card-title ">
-                Navy Thermal Full Sleeves Waffle-Knit
+                  Navy Thermal Full Sleeves Waffle-Knit
                 </h5>
 
                 <div className="card-prices flex items-center mt-2.5 mb-5">
@@ -56,7 +55,6 @@ export default function FullSleeveTshirt() {
             </div>
           </div>
 
-
           <div className="tshirt-card ">
             <div>
               <a href="#" className="sale-image">
@@ -65,12 +63,11 @@ export default function FullSleeveTshirt() {
                   src="https://radstore.pk/cdn/shop/files/1C1A3403-half_360x.jpg?v=1704188417"
                   alt="product image"
                 />
-            
               </a>
 
               <div>
                 <h5 className=" card-title ">
-                Striped Sleeves Black & Olive Baseball Raglan
+                  Striped Sleeves Black & Olive Baseball Raglan
                 </h5>
 
                 <div className="card-prices flex items-center mt-2.5 mb-5">
@@ -344,12 +341,11 @@ export default function FullSleeveTshirt() {
               </div>
             </div>
           </div>
-          
         </div>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
       <div className="tshirt-section-footer">
-        <button>View all</button>
+        <ArrowButton text={"View all"} />
       </div>
     </div>
   );

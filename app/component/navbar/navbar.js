@@ -51,6 +51,7 @@ export default function Navbar() {
       }`}
       style={{
         fontSize: "17px",
+        
       }}
     >
       <div className="w-[90%] mx-auto sm:px-4 py-5">

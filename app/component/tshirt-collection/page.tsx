@@ -1,3 +1,4 @@
+import ArrowButton from "../animata/button/button";
 import "./style.css";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
@@ -332,7 +333,8 @@ export default function TshirtCollection() {
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
       <div className="tshirt-section-footer">
-        <button>View all</button>
+        <ArrowButton text={"View all"}/>
+        {/* <button>View all</button> */}
       </div>
     </div>
   );
