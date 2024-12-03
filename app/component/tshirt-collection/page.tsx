@@ -6,7 +6,7 @@ export default function TshirtCollection() {
   return (
     <div className="tshirt-container">
       <h1>T-Shirts</h1>
-      <ScrollArea className="w-full ">
+      <ScrollArea className="w-full scroll">
         <div className="card-container">
           <div className="tshirt-card relative">
             <a href="#">

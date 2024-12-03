@@ -47,6 +47,8 @@
 .tshirt-section-footer {
   text-align: center;
 }
+
+
 @media only screen and (max-width: 998px) {
   .card-container {
     width: 100%;
@@ -88,9 +90,9 @@
 
 @media only screen and (max-width: 756px) {
   .tshirt-card {
-    margin-bottom: 0px;
+    margin-bottom: 30px;
   }
-  .sizes-tag-container{
+  .sizes-tag-container {
     justify-content: center;
   }
   .tshirt-section-footer button {
