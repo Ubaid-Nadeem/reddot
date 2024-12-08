@@ -11,6 +11,8 @@
 .HomeFooter2-container {
   width: 90%;
   margin: auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 .HomeFooter2-container > div {
   flex: 1;

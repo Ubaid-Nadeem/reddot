@@ -14,19 +14,20 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
 import { useState, useEffect } from "react";
 import logoBlack from "@/public/logo-black_100x.png";
 // import logoWhite from "@/public/logo-white.avif";
 
 import Image from "next/image";
 import "./style.css";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   // When the user scrolls, check the scroll position
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -42,6 +43,30 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const listItemVariant = {
+    closed: {
+      x: -10,
+      opacity: 0,
+    },
+    opened: {
+      x: 0,
+      opacity: 1,
+    },
+  };
+
+  const listVarient = {
+    closed: {
+      x: "100vw",
+    },
+    opened: {
+      x: "0",
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
   return (
     <nav
       className={`transition-all duration-300 ease-in-out ${
@@ -51,7 +76,6 @@ export default function Navbar() {
       }`}
       style={{
         fontSize: "17px",
-        
       }}
     >
       <div className="w-[90%] mx-auto sm:px-4 py-5">
@@ -62,9 +86,12 @@ export default function Navbar() {
             className="left-nav hidden md:flex space-x-6 items-center flex-1"
             style={{}}
           >
-            <ul className="flex item-center flex-1 gap-5" style={{
-              fontSize : "18px"
-            }}>
+            <ul
+              className="flex item-center flex-1 gap-5"
+              style={{
+                fontSize: "18px",
+              }}
+            >
               <li className="flex gap-2">
                 Shop{" "}
                 <svg
@@ -100,7 +127,7 @@ export default function Navbar() {
               </li>
               <li className="flex gap-1">
                 {" "}
-                🔥<span >Bundle Deals</span>
+                🔥<span>Bundle Deals</span>
               </li>
             </ul>
           </div>
@@ -135,8 +162,13 @@ export default function Navbar() {
                   <SheetTitle></SheetTitle>
                   <SheetDescription>
                     <ScrollArea className="h-[100vh] pb-10">
-                      <ul className="mt-5 p-3">
-                        <li>
+                      <motion.ul
+                        variants={listVarient}
+                        initial="closed"
+                        animate="opened"
+                        className="mt-5 p-3"
+                      >
+                        <motion.li variants={listItemVariant}>
                           <Accordion type="single" collapsible>
                             <AccordionItem value="item-1">
                               <AccordionTrigger
@@ -171,9 +203,9 @@ export default function Navbar() {
                               </AccordionContent>
                             </AccordionItem>
                           </Accordion>
-                        </li>
+                        </motion.li>
 
-                        <li>
+                        <motion.li variants={listItemVariant}>
                           <Accordion>
                             <AccordionItem
                               value="item-1"
@@ -189,9 +221,9 @@ export default function Navbar() {
                               </div>
                             </AccordionItem>
                           </Accordion>
-                        </li>
+                        </motion.li>
 
-                        <li>
+                        <motion.li variants={listItemVariant}>
                           <Accordion>
                             <AccordionItem
                               value="item-1"
@@ -207,8 +239,9 @@ export default function Navbar() {
                               </div>
                             </AccordionItem>
                           </Accordion>
-                        </li>
-                        <li>
+                        </motion.li>
+
+                        <motion.li variants={listItemVariant}>
                           <Accordion>
                             <AccordionItem
                               value="item-1"
@@ -216,15 +249,16 @@ export default function Navbar() {
                                 fontSize: "20px",
                                 padding: "20px 0",
                                 cursor: "pointer",
-                                textAlign : 'left',
-                                fontWeight : "bold"
+                                textAlign: "left",
+                                fontWeight: "bold",
                               }}
                             >
                               Login
                             </AccordionItem>
                           </Accordion>
-                        </li>
-                        <li>
+                        </motion.li>
+
+                        <motion.li variants={listItemVariant}>
                           <div className="flex pt-5 gap-2">
                             <svg
                               className="w-8 h-8 "
@@ -259,8 +293,8 @@ export default function Navbar() {
                               />
                             </svg>
                           </div>
-                        </li>
-                      </ul>
+                        </motion.li>
+                      </motion.ul>
                     </ScrollArea>
                   </SheetDescription>
                 </SheetHeader>
@@ -287,6 +321,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navbar Links */}
+
           <div className="right-nav gap-2 space-x-6 items-center flex-1 text-right">
             <span>
               <svg
@@ -326,6 +361,7 @@ export default function Navbar() {
 
             <span className="">
               {/* cart */}
+
               <Sheet>
                 <SheetTrigger>
                   <svg
@@ -349,10 +385,7 @@ export default function Navbar() {
                 <SheetContent side={"right"}>
                   <SheetHeader>
                     <SheetTitle>Cart</SheetTitle>
-                    <SheetDescription>
-                      This action cannot be undone. This will permanently delete
-                      your account and remove your data from our servers.
-                    </SheetDescription>
+                    <SheetDescription></SheetDescription>
                   </SheetHeader>
                 </SheetContent>
               </Sheet>
