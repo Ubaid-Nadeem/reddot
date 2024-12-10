@@ -6,9 +6,8 @@ import image3 from "../../../public/DSC00375_160x.jpg";
 import image4 from "../../../public/DSC00357_180x.jpg";
 import image5 from "../../../public/DSC00354_100x.jpg";
 import Image from "next/image";
-import { delay, motion, useAnimation, useInView } from "framer-motion";
+import {  motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { once } from "events";
 
 export default function Section() {
   

@@ -29,13 +29,13 @@ export default function HomeFooter2() {
 
   const listVarient = {
     closed: {
-      x: "100vw",
+      // x: "100vw",
     },
     opened: {
-      x: "0",
+      // x: "0",
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.1,
+        staggerChildren: 0.3,
       },
     },
   };
@@ -48,13 +48,14 @@ export default function HomeFooter2() {
           alt=""
         />
       </div>
-      <div className="HomeFooter2-child2" ref={containerRef}>
+      <div className="HomeFooter2-child2">
+        <div ref={containerRef}   />
         <motion.div
           variants={listVarient}
           initial="closed"
           animate={mainControls}
           transition={{
-            delay : 1
+            // delay: 2,
           }}
         >
           <motion.p variants={listItemVariant}>A good change</motion.p>

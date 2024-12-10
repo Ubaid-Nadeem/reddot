@@ -1,6 +1,7 @@
-import Link from 'next/link'
-import { Facebook, Instagram } from 'lucide-react'
-import "./footer.css"
+import Link from "next/link";
+import { Facebook, Instagram } from "lucide-react";
+
+import "./footer.css";
 export default function Footer() {
   return (
     <footer className="bg-[#111111] text-white py-12 px-4 md:px-6">
@@ -13,7 +14,7 @@ export default function Footer() {
             <li>SUPPORT@RADSTORE.PK</li>
             <li>
               <span className="font-bold">
-                Call/Whatsapp : {' '}
+                Call/Whatsapp :{" "}
                 <span className="hover:underline transition-all duration-300 ease-in-out">
                   03022994444
                 </span>
@@ -28,7 +29,13 @@ export default function Footer() {
         <div className="space-y-4">
           <h3 className="font-bold text-lg">Explore</h3>
           <ul className="space-y-2">
-            {['⚡ Sale', 'Men Tops', 'Men Bottoms', 'Best Sellers', 'New Arrivals'].map((item) => (
+            {[
+              "⚡ Sale",
+              "Men Tops",
+              "Men Bottoms",
+              "Best Sellers",
+              "New Arrivals",
+            ].map((item) => (
               <li key={item}>
                 <Link href="#" className="hover:underline">
                   {item}
@@ -43,16 +50,16 @@ export default function Footer() {
           <h3 className="font-bold text-lg">Information</h3>
           <ul className="space-y-2">
             {[
-              'About us',
-              'Contact us',
-              'Returns & Exchanges',
-              'Shipping Policy',
-              'Terms of Service',
-              'Privacy Policy',
-            ].map((item) => (
-              <li key={item}>
-                <Link href="#" className="hover:underline">
-                  {item}
+              { name: "About us", url: "/pages/about-us" },
+              {name :"Contact us", url :"/pages/contact-us" },
+              {name :"Returns & Exchanges" , url: "/pages/about-us"},
+              {name :"Shipping Policy" , url: "/pages/about-us"},
+              {name : "Terms of Service" , url: "/pages/about-us"},
+              {name : "Privacy Policy" , url: "/pages/about-us"},
+            ].map((item,id) => (
+              <li key={id}>
+                <Link href={item.url} className="hover:underline">
+                  {item.name}
                 </Link>
               </li>
             ))}
@@ -74,14 +81,14 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      
+
       {/* Copyright section */}
       <div className="mt-8 pt-8 ">
         <p className="text-center text-sm">
-          © 2024 Rad Clothing Store All Rights Reserved Developed by Ubaid Nadeem
+          © 2024 Rad Clothing Store All Rights Reserved Developed by Ubaid
+          Nadeem
         </p>
       </div>
     </footer>
-  )
+  );
 }
-

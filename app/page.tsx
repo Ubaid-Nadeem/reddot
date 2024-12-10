@@ -12,6 +12,7 @@ import HomeFooter2 from "./component/home-footer-1/page";
 import Footer from "./component/footer/footer";
 import { useEffect, useState } from "react";
 import Loading from "./component/loading/page";
+import { useStore } from "../zustand/store";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -20,17 +21,25 @@ const outfit = Outfit({
 
 export default function Home() {
   const [isloaded, setIsloaded] = useState(false);
+  const { cart, addToCart } = useStore();
 
   useEffect(() => {
     setIsloaded(true);
+    addToCart({
+      id: 1,
+      name: "shirt",
+    });
   }, []);
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
 
   return (
     <>
       {isloaded ? (
         <div className={outfit.className}>
           <>
-            <Navbar />
             <HeroComponet />
             <div
               style={{
@@ -44,7 +53,6 @@ export default function Home() {
             <FullSleeveTshirt />
             <HomeDisplay1 />
             <HomeFooter2 />
-            <Footer />
           </>
         </div>
       ) : (

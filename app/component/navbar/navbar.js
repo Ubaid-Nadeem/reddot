@@ -16,16 +16,17 @@ import {
 } from "@/components/ui/accordion";
 import { useState, useEffect } from "react";
 import logoBlack from "@/public/logo-black_100x.png";
-// import logoWhite from "@/public/logo-white.avif";
-
+import { CartBar } from "../cartbar/cart-bar";
 import Image from "next/image";
 import "./style.css";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-
+  const pathname = usePathname();
   // When the user scrolls, check the scroll position
 
   useEffect(() => {
@@ -40,6 +41,7 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    console.log();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -72,7 +74,11 @@ export default function Navbar() {
       className={`transition-all duration-300 ease-in-out ${
         isSticky
           ? "fixed top-0 left-0 right-0 z-50 bg-white shadow-md"
-          : "text-[white] absolute top-0 left-0 right-0"
+          : ` ${
+              pathname == "/"
+                ? "absolute text-[white]"
+                : "text-[black] border-b-2"
+            } top-0 left-0 right-0`
       }`}
       style={{
         fontSize: "17px",
@@ -306,23 +312,32 @@ export default function Navbar() {
 
           <div className=" flex-1 ">
             {
-              <Image
-                src={
-                  isSticky
-                    ? logoBlack
-                    : "https://radstore.pk/cdn/shop/files/logo-small_7d4c07ae-d941-4a8c-9c59-a5a91127162b_100x.png?v=1613726347"
-                }
-                alt="logo"
-                width={100}
-                height={100}
-                className="logo m-auto"
-              />
+              <Link href={"/"}>
+                <Image
+                  src={
+                    isSticky
+                      ? logoBlack
+                      : pathname === "/"
+                      ? "https://radstore.pk/cdn/shop/files/logo-small_7d4c07ae-d941-4a8c-9c59-a5a91127162b_100x.png?v=1613726347"
+                      : logoBlack
+                  }
+                  alt="logo"
+                  width={100}
+                  height={100}
+                  className="logo m-auto"
+                />
+              </Link>
             }
           </div>
 
           {/* Desktop Navbar Links */}
 
-          <div className="right-nav gap-2 space-x-6 items-center flex-1 text-right">
+          <div
+            className="flex right-nav gap-2 space-x-6 items-center flex-1 text-right"
+            style={{
+              justifyContent: "right",
+            }}
+          >
             <span>
               <svg
                 className="w-6 h-6  inline hidden md:inline"
@@ -358,38 +373,46 @@ export default function Navbar() {
                 />
               </svg>
             </span>
-
-            <span className="">
-              {/* cart */}
-
-              <Sheet>
-                <SheetTrigger>
-                  <svg
-                    className="w-6 h-6  inline"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
-                    />
-                  </svg>
-                </SheetTrigger>
-                <SheetContent side={"right"}>
-                  <SheetHeader>
-                    <SheetTitle>Cart</SheetTitle>
-                    <SheetDescription></SheetDescription>
-                  </SheetHeader>
-                </SheetContent>
-              </Sheet>
+            <span className="relative">
+              <CartBar />
             </span>
+
+            {/* cart */}
+
+            {/* <Sheet>
+              <SheetTrigger>
+                <svg
+                  className="w-6 h-6  inline"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+                  />
+                </svg>
+              </SheetTrigger>
+              <SheetContent side={"right"}>
+                <SheetHeader>
+                  <div className="cart-slide-top">
+                    <h2 className="font-bold text-2xl py-5 absolute top-0 border-b-2 w-[100%]">
+                      Cart
+                    </h2>
+                  </div>
+                  <div className="cart-slide-content"></div>
+                  <div>
+                     
+                  </div>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet> */}
           </div>
         </div>
       </div>

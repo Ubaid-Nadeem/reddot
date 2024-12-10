@@ -5,7 +5,8 @@ import ArrowButton from "../animata/button/button";
 import "./style.css";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { motion, useAnimation, useInView } from "motion/react";
-import { Opacity } from "@tsparticles/engine";
+import Link from "next/link";
+
 export default function TshirtCollection() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true });
@@ -26,7 +27,7 @@ export default function TshirtCollection() {
       discountedPrice: 2630,
       discription: "",
       id: 1,
-      sizes: ["S", "M", "L","XL"],
+      sizes: ["S", "M", "L", "XL"],
     },
     {
       productName: "Spider-M Oversize Sweatshirt",
@@ -123,7 +124,6 @@ export default function TshirtCollection() {
           variants={listVarient}
           initial="closed"
           animate={mainControls}
-          
         >
           <motion.div
             className="tshirt-card relative"
@@ -159,50 +159,58 @@ export default function TshirtCollection() {
                 variants={listItemVariant}
                 className="tshirt-card overflow-hidden relative"
               >
-                <div className="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded z-10">
-                  SALE
-                </div>
-                <div>
-                  <a href="#" className="sale-image">
-                    <img
-                      className="w-full"
-                      src={product.imagePath}
-                      alt="product image"
-                    />
-                  </a>
-
+                <Link href={"/product/1"}>
+                  <div className="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded z-10">
+                    SALE
+                  </div>
                   <div>
-                    <h5 className=" card-title ">{product.productName}</h5>
+                    <a href="#" className="sale-image">
+                      <img
+                        className="w-full"
+                        src={product.imagePath}
+                        alt="product image"
+                      />
+                    </a>
 
-                    <div className="card-prices flex items-center mt-2.5 mb-5">
-                      <div className="flex items-center space-x-1 rtl:space-x-reverse">
-                        <span className="text-[14px]">
-                          <del>Rs. {product.currentPice}</del>
-                        </span>
-                        <span className="text-[14px]">
-                          Rs. {product.discountedPrice}
+                    <div>
+                      <h5 className=" card-title ">{product.productName}</h5>
+
+                      <div className="card-prices flex items-center mt-2.5 mb-5">
+                        <div className="flex items-center space-x-1 rtl:space-x-reverse">
+                          <span className="text-[14px]">
+                            <del>Rs. {product.currentPice}</del>
+                          </span>
+                          <span className="text-[14px]">
+                            Rs. {product.discountedPrice}
+                          </span>
+                        </div>
+                        <span className="save-price bg-blue-100 text-[red] text-xs  px-2.5 py-1.5 rounded  ms-3">
+                          Save Rs.{" "}
+                          {product.currentPice - product.discountedPrice}
                         </span>
                       </div>
-                      <span className="save-price bg-blue-100 text-[red] text-xs  px-2.5 py-1.5 rounded  ms-3">
-                        Save Rs. {product.currentPice - product.discountedPrice}
-                      </span>
-                    </div>
 
-                    <div
-                      className="flex gap-2 sizes-tag-container"
-                      style={{
-                        fontSize: "12px",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      {product.sizes.map((size,sizeIndex) => {
-                        return (
-                          <button key={sizeIndex} className="bg-[#f3f3f3] px-2 ">{size}</button>
-                        );
-                      })}
+                      <div
+                        className="flex gap-2 sizes-tag-container"
+                        style={{
+                          fontSize: "12px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {product.sizes.map((size, sizeIndex) => {
+                          return (
+                            <button
+                              key={sizeIndex}
+                              className="bg-[#f3f3f3] px-2 "
+                            >
+                              {size}
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </motion.div>
             );
           })}

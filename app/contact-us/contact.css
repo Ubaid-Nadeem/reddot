@@ -1,0 +1,43 @@
+.contact-us-container {
+  text-align: center;
+  padding-top: 100px;
+  color: #111111;
+  width: 70%;
+  margin: auto;
+}
+.contact-us-container > h2 {
+  font-weight: 800;
+  font-size: 30px;
+  padding: 10px;
+}
+.contact-us-container p {
+  padding: 12px;
+  font-size: 20px;
+}
+.contact-us-container h3 {
+  font-weight: bold;
+  font-size: 21px;
+  padding: 12px;
+}
+.form-container > h2 {
+  font-weight: 800;
+  font-size: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .contact-us-container {
+  padding-top: 50px;
+    width: 90%;
+  }
+  .form-container > h2 {
+    font-size: 24px;
+  }
+  .contact-us-container > h2 {
+    font-size: 24px;
+  }
+  .contact-us-container p {
+    font-size: 16px;
+  }
+  .contact-us-container h3 {
+    font-size: 18px;
+  }
+}
